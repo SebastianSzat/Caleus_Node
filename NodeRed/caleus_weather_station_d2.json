@@ -1,0 +1,2003 @@
+[
+    {
+        "id": "a43d1490faf7508d",
+        "type": "tab",
+        "label": "Caleus Weather Station",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f99c1ba381cf8a0c",
+        "type": "tab",
+        "label": "Caleus Reciever",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9a5822ffdcbd794d",
+        "type": "ui-theme",
+        "name": "Theme Name",
+        "colors": {
+            "surface": "#c4c4c4",
+            "primary": "#0094ce",
+            "bgPage": "#ffffff",
+            "groupBg": "#ffffff",
+            "groupOutline": "#032eb0"
+        },
+        "sizes": {
+            "density": "comfortable",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "6px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "f429801ba0f84b6b",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker - Receiver",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "caleus_receiver",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bf33fde736517de3",
+        "type": "ui-base",
+        "name": "Caleus Weather Station UI",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 5,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "3a15138897d79a03",
+        "type": "ui-page",
+        "name": "Weather Station",
+        "ui": "bf33fde736517de3",
+        "path": "/weather",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "9a5822ffdcbd794d",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "84c4c027120e6cbb",
+        "type": "ui-group",
+        "name": "Current Conditions",
+        "page": "3a15138897d79a03",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "45337fe3396a3646",
+        "type": "ui-group",
+        "name": "Active Alerts",
+        "page": "3a15138897d79a03",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "119461fe2b45d904",
+        "type": "ui-group",
+        "name": "History",
+        "page": "3a15138897d79a03",
+        "width": 12,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "4348d5fe5cfe2ece",
+        "type": "ui-page",
+        "name": "Park Alert",
+        "ui": "bf33fde736517de3",
+        "path": "/park_alert",
+        "icon": "tree",
+        "layout": "grid",
+        "theme": "9a5822ffdcbd794d",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "570e0e0aa0a2e687",
+        "type": "ui-page",
+        "name": "School Alert",
+        "ui": "bf33fde736517de3",
+        "path": "/school_alert",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "9a5822ffdcbd794d",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ed60925b5b386bde",
+        "type": "ui-page",
+        "name": "Police Alert",
+        "ui": "bf33fde736517de3",
+        "path": "/police_alert",
+        "icon": "car",
+        "layout": "grid",
+        "theme": "9a5822ffdcbd794d",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "23c7d81671abc068",
+        "type": "ui-page",
+        "name": "Severe / Global Alert",
+        "ui": "bf33fde736517de3",
+        "path": "/severe_alert",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "9a5822ffdcbd794d",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 5,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "843d4b0ea98839c8",
+        "type": "ui-group",
+        "name": "Park Alert",
+        "page": "4348d5fe5cfe2ece",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1b2462bec37b75bb",
+        "type": "ui-group",
+        "name": "School Alert",
+        "page": "570e0e0aa0a2e687",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "2e5d1ab932d07fe6",
+        "type": "ui-group",
+        "name": "Police Alert",
+        "page": "ed60925b5b386bde",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "9107fd8e34b5c57c",
+        "type": "ui-group",
+        "name": "Severe / Global Alert",
+        "page": "23c7d81671abc068",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "fdfd2fb1412ffdb5",
+        "type": "ui-spacer",
+        "group": "843d4b0ea98839c8",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "10f4f66d05d82089",
+        "type": "ui-spacer",
+        "group": "1b2462bec37b75bb",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "1320861a7f958831",
+        "type": "ui-spacer",
+        "group": "2e5d1ab932d07fe6",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "abd473fc670e7f17",
+        "type": "ui-spacer",
+        "group": "9107fd8e34b5c57c",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "684735727a59d312",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker - Station",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "caleus_station",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4ccbd8f3a37a45d0",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "temp_celsius",
+        "props": [
+            {
+                "p": "payload",
+                "v": "24.9",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "temp_celsius",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "temp_celsius",
+        "payload": "24.9",
+        "payloadType": "num",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "2023352e5578a159",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "wind_ms",
+        "props": [
+            {
+                "p": "payload",
+                "v": "6.9",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "wind_ms",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "wind_ms",
+        "payload": "6.9",
+        "payloadType": "num",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "883887c998f4f35f",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "wind_direction_degree",
+        "props": [
+            {
+                "p": "payload",
+                "v": "225",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "wind_direction_degree",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "wind_direction_degree",
+        "payload": "225",
+        "payloadType": "num",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "ced6b94169407bf9",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "uv_index",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "uv_index",
+        "payload": "9",
+        "payloadType": "num",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "7d5b322779433f2e",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "rainfall_mm",
+        "props": [
+            {
+                "p": "payload",
+                "v": "2.3",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "rainfall_mm",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "rainfall_mm",
+        "payload": "2.3",
+        "payloadType": "num",
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "102c644fa42339cd",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "noise_level_db",
+        "props": [
+            {
+                "p": "payload",
+                "v": "59.6",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "noise_level_db",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "noise_level_db",
+        "payload": "59.6",
+        "payloadType": "num",
+        "x": 120,
+        "y": 380,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "d2420e0eae76f240",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "battery_percent",
+        "props": [
+            {
+                "p": "payload",
+                "v": "67",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "battery_percent",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "battery_percent",
+        "payload": "67",
+        "payloadType": "num",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "6ab89fbdc5033d8d",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "vibration_ms2",
+        "props": [
+            {
+                "p": "payload",
+                "v": "2.3",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "vibration_ms2",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "vibration_ms2",
+        "payload": "2.3",
+        "payloadType": "num",
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "76d2dead23d20c1e",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "humidity_percent",
+        "props": [
+            {
+                "p": "payload",
+                "v": "65",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "humidity_percent",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "humidity_percent",
+        "payload": "65",
+        "payloadType": "num",
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "3c47e56c55293115",
+        "type": "inject",
+        "z": "a43d1490faf7508d",
+        "name": "air_pressure_hpa",
+        "props": [
+            {
+                "p": "payload",
+                "v": "1013.2",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "v": "air_pressure_hpa",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "air_pressure_hpa",
+        "payload": "1013.2",
+        "payloadType": "num",
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "262b8a616f55dd29"
+            ]
+        ]
+    },
+    {
+        "id": "262b8a616f55dd29",
+        "type": "join",
+        "z": "a43d1490faf7508d",
+        "name": "Join_sensory_inputs",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "10",
+        "count": "10",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "6fb8ee5f6b925be1"
+            ]
+        ]
+    },
+    {
+        "id": "6fb8ee5f6b925be1",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "Timestamp & Station ID",
+        "func": "msg.payload.timestamp = new Date().toISOString();\n// TODO: change station_id per physical device\nmsg.payload.station_id = \"CALEUS_001\";\nmsg.payload.station_location = \"placeholder_lat,placeholder_lon\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "81462509e2aa8b89",
+                "7f5e7259ae81cf23",
+                "2448129900ab9c28"
+            ]
+        ]
+    },
+    {
+        "id": "81462509e2aa8b89",
+        "type": "debug",
+        "z": "a43d1490faf7508d",
+        "name": "Pipeline_debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 680,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "7f5e7259ae81cf23",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "Dashboard Splitter",
+        "func": "var d = msg.payload;\nfunction mk(v,t){return {payload:v, topic:t};}\nfunction windLabel(deg){\n    var dirs=['N','NNE','NE','ENE','E','ESE','SE','SSE',\n              'S','SSW','SW','WSW','W','WNW','NW','NNW'];\n    return dirs[Math.round(deg/22.5)%16];\n}\nreturn [\n    mk(d.temp_celsius,          'temp_celsius'),\n    mk(d.wind_ms,               'wind_ms'),\n    mk(d.uv_index,              'uv_index'),\n    mk(d.noise_level_db,        'noise_level_db'),\n    mk(d.humidity_percent,      'humidity_percent'),\n    mk(d.air_pressure_hpa,      'air_pressure_hpa'),\n    mk(d.wind_direction_degree+'° '+windLabel(d.wind_direction_degree),'wind_dir'),\n    mk({x:new Date().toISOString(), y:d.temp_celsius},'Temperature °C'),\n    mk({x:new Date().toISOString(), y:d.noise_level_db},'Noise dB')\n];",
+        "outputs": 9,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 260,
+        "wires": [
+            [
+                "007558085b4c88f2"
+            ],
+            [
+                "e14cdf169f73063f"
+            ],
+            [
+                "303669474acdcf6c"
+            ],
+            [
+                "1717b34969dde95c"
+            ],
+            [
+                "4ef3bb4d5e85f795"
+            ],
+            [
+                "d4ade9ae2f65bcdf"
+            ],
+            [
+                "4606a7f399db9ef3"
+            ],
+            [
+                "6624557abdf3c90e"
+            ],
+            [
+                "f2ba674f3342399d"
+            ]
+        ]
+    },
+    {
+        "id": "2448129900ab9c28",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "Alert Router",
+        "func": "var d = msg.payload;\nfunction mk(v){return {payload:{value:v, data:d}};}\nreturn [mk(d.uv_index), mk(d.wind_ms),\n        mk(d.noise_level_db), mk(d.vibration_ms2)];",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 540,
+        "wires": [
+            [
+                "d32dac144fe798a1"
+            ],
+            [
+                "4cd3f7d233e6b64a"
+            ],
+            [
+                "e514bf4a9317bc23"
+            ],
+            [
+                "c41b690b3cc87a74"
+            ]
+        ]
+    },
+    {
+        "id": "d32dac144fe798a1",
+        "type": "switch",
+        "z": "a43d1490faf7508d",
+        "name": "UV Alert Levels",
+        "property": "payload.value",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "11",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "8",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "3",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 940,
+        "y": 480,
+        "wires": [
+            [
+                "c16fdcd0b4b01533"
+            ],
+            [
+                "cf289f5519aa6312"
+            ],
+            [
+                "cf289f5519aa6312"
+            ],
+            [
+                "cf289f5519aa6312"
+            ]
+        ]
+    },
+    {
+        "id": "4cd3f7d233e6b64a",
+        "type": "switch",
+        "z": "a43d1490faf7508d",
+        "name": "Wind Alert Levels",
+        "property": "payload.value",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "24",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "17",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 950,
+        "y": 540,
+        "wires": [
+            [
+                "c16fdcd0b4b01533"
+            ],
+            [
+                "8502565d6e680567"
+            ],
+            [
+                "8502565d6e680567"
+            ]
+        ]
+    },
+    {
+        "id": "e514bf4a9317bc23",
+        "type": "switch",
+        "z": "a43d1490faf7508d",
+        "name": "Noise Alert Levels",
+        "property": "payload.value",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "85",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "65",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 950,
+        "y": 600,
+        "wires": [
+            [
+                "585a998c914131e5"
+            ],
+            [
+                "585a998c914131e5"
+            ]
+        ]
+    },
+    {
+        "id": "c41b690b3cc87a74",
+        "type": "switch",
+        "z": "a43d1490faf7508d",
+        "name": "Vibration Alert Levels",
+        "property": "payload.value",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "8",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "2",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 960,
+        "y": 660,
+        "wires": [
+            [
+                "c16fdcd0b4b01533"
+            ],
+            [
+                "c16fdcd0b4b01533"
+            ],
+            [
+                "bdab2257db271a4e"
+            ]
+        ]
+    },
+    {
+        "id": "cf289f5519aa6312",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "Build UV Alert Packet",
+        "func": "var v=msg.payload.value, d=msg.payload.data;\nvar lvl = v>=8?'very_high':v>=6?'high':'moderate';\nmsg.topic = 'alerts/park/'+d.station_id+'/uv';\nmsg.payload = {\n    alert_type:'uv', level:lvl, value:v,\n    station_id:d.station_id,\n    location:d.station_location,\n    timestamp:d.timestamp,\n    message:'UV Index '+lvl.toUpperCase()+': '+v\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 340,
+        "wires": [
+            [
+                "b2d47c76abedf57b",
+                "dcca4b6a46e1b0b3",
+                "b8b7fbb6f9fea6bb",
+                "73043ccb7247b3d7"
+            ]
+        ]
+    },
+    {
+        "id": "8502565d6e680567",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "Build Wind Alert Packet",
+        "func": "var v=msg.payload.value, d=msg.payload.data;\nvar lvl = v>=17?'storm':'strong';\nmsg.topic = 'alerts/park/'+d.station_id+'/wind';\nmsg.payload = {\n    alert_type:'wind', level:lvl, value_ms:v,\n    station_id:d.station_id,\n    location:d.station_location,\n    timestamp:d.timestamp,\n    message:'Wind '+lvl.toUpperCase()+': '+v+' m/s'\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 420,
+        "wires": [
+            [
+                "b2d47c76abedf57b",
+                "dcca4b6a46e1b0b3",
+                "b8b7fbb6f9fea6bb",
+                "73043ccb7247b3d7"
+            ]
+        ]
+    },
+    {
+        "id": "585a998c914131e5",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "Build Noise/Police Alert Packet",
+        "func": "var v=msg.payload.value, d=msg.payload.data;\nvar lvl = v>=85?'spike_alert':'sustained_violation';\nmsg.topic = 'alerts/police/noise/'+d.station_id;\nmsg.payload = {\n    alert_type:'noise', level:lvl, value_db:v,\n    station_id:d.station_id,\n    location:d.station_location,\n    timestamp:d.timestamp,\n    duration_exceeded_s:0,\n    message:'Noise '+lvl+': '+v+'dB — Police Report'\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 500,
+        "wires": [
+            [
+                "f3bd6a5bb0c773ef",
+                "b8b7fbb6f9fea6bb",
+                "73043ccb7247b3d7"
+            ]
+        ]
+    },
+    {
+        "id": "bdab2257db271a4e",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "Build Vibration Alert Packet",
+        "func": "var v=msg.payload.value, d=msg.payload.data;\nvar lvl = v>=3?'high':'notable';\nmsg.topic = 'alerts/park/'+d.station_id+'/vibration';\nmsg.payload = {\n    alert_type:'vibration', level:lvl, value_ms2:v,\n    station_id:d.station_id,\n    location:d.station_location,\n    timestamp:d.timestamp,\n    message:'Vibration '+lvl.toUpperCase()+': '+v+' m/s²'\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 580,
+        "wires": [
+            [
+                "b2d47c76abedf57b",
+                "dcca4b6a46e1b0b3",
+                "b8b7fbb6f9fea6bb",
+                "73043ccb7247b3d7"
+            ]
+        ]
+    },
+    {
+        "id": "c16fdcd0b4b01533",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "Build Severe / Global Alert Packet",
+        "func": "var v=msg.payload.value, d=msg.payload.data;\nvar atype = v>=8 ? 'earthquake_vibration'\n          : v>=24 ? 'severe_storm'\n          : 'extreme_uv';\nmsg.topic = 'alerts/global/severe/'+d.station_id;\nmsg.payload = {\n    alert_type:atype, level:'critical', value:v,\n    station_id:d.station_id,\n    location:d.station_location,\n    timestamp:d.timestamp,\n    full_reading:d,\n    message:'🚨 SEVERE: '+atype.toUpperCase()+' | '+v\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 660,
+        "wires": [
+            [
+                "9310c78e470b190e",
+                "b2d47c76abedf57b",
+                "dcca4b6a46e1b0b3",
+                "b8b7fbb6f9fea6bb",
+                "73043ccb7247b3d7"
+            ]
+        ]
+    },
+    {
+        "id": "73043ccb7247b3d7",
+        "type": "function",
+        "z": "a43d1490faf7508d",
+        "name": "json-to-message",
+        "func": "var log = flow.get('alert_log') || [];\nvar p = msg.payload;\nvar entry = new Date().toLocaleTimeString() + ' — ' + \n            p.alert_type.toUpperCase() + ' | ' + p.level + ' | ' + p.message;\nlog.unshift(entry);\nif (log.length > 10) log.pop();\nflow.set('alert_log', log);\nmsg.payload = log.join('<br>');\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1570,
+        "y": 660,
+        "wires": [
+            [
+                "62d245bb0da05233"
+            ]
+        ]
+    },
+    {
+        "id": "b2d47c76abedf57b",
+        "type": "mqtt out",
+        "z": "a43d1490faf7508d",
+        "name": "🌳 MQTT Park Alert",
+        "topic": "caleus/alerts/park",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "684735727a59d312",
+        "x": 1540,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "dcca4b6a46e1b0b3",
+        "type": "mqtt out",
+        "z": "a43d1490faf7508d",
+        "name": "🏫 MQTT School Alert",
+        "topic": "caleus/alerts/school",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "684735727a59d312",
+        "x": 1540,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f3bd6a5bb0c773ef",
+        "type": "mqtt out",
+        "z": "a43d1490faf7508d",
+        "name": "🚔 MQTT Police Report",
+        "topic": "caleus/alerts/police",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "684735727a59d312",
+        "x": 1550,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "9310c78e470b190e",
+        "type": "mqtt out",
+        "z": "a43d1490faf7508d",
+        "name": "🚨 MQTT Global Severe",
+        "topic": "caleus/alerts/severe",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "684735727a59d312",
+        "x": 1550,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "b8b7fbb6f9fea6bb",
+        "type": "debug",
+        "z": "a43d1490faf7508d",
+        "name": "Alert_debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1510,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "007558085b4c88f2",
+        "type": "ui-gauge",
+        "z": "a43d1490faf7508d",
+        "name": "",
+        "group": "84c4c027120e6cbb",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Temperature",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": " °C",
+        "segments": [
+            {
+                "from": "-20",
+                "color": "#00b500",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "15",
+                "color": "#e6e600",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#ca3838",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": -20,
+        "max": 50,
+        "sizeThickness": "6",
+        "sizeGap": "6",
+        "sizeKeyThickness": "2",
+        "className": "",
+        "x": 930,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e14cdf169f73063f",
+        "type": "ui-gauge",
+        "z": "a43d1490faf7508d",
+        "name": "",
+        "group": "84c4c027120e6cbb",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Wind",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": " m/s",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#00b500",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "10",
+                "color": "#e6e600",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "17",
+                "color": "#ca3838",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 40,
+        "sizeThickness": "6",
+        "sizeGap": "6",
+        "sizeKeyThickness": "2",
+        "className": "",
+        "x": 910,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "303669474acdcf6c",
+        "type": "ui-gauge",
+        "z": "a43d1490faf7508d",
+        "name": "",
+        "group": "84c4c027120e6cbb",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "UV Index",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#00b500",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "3",
+                "color": "#e6e600",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "6",
+                "color": "#ca3838",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 12,
+        "sizeThickness": "6",
+        "sizeGap": "6",
+        "sizeKeyThickness": "2",
+        "className": "",
+        "x": 920,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1717b34969dde95c",
+        "type": "ui-gauge",
+        "z": "a43d1490faf7508d",
+        "name": "",
+        "group": "84c4c027120e6cbb",
+        "order": 4,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Noise level",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": " db",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#00b500",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "65",
+                "color": "#e6e600",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "85",
+                "color": "#ca3838",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 120,
+        "sizeThickness": "6",
+        "sizeGap": "6",
+        "sizeKeyThickness": "2",
+        "className": "",
+        "x": 930,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ef3bb4d5e85f795",
+        "type": "ui-gauge",
+        "z": "a43d1490faf7508d",
+        "name": "",
+        "group": "84c4c027120e6cbb",
+        "order": 5,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Humidity",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": " %",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#e6e600",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#00b500",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "80",
+                "color": "#e6e600",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 100,
+        "sizeThickness": "6",
+        "sizeGap": "6",
+        "sizeKeyThickness": "2",
+        "className": "",
+        "x": 920,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4ade9ae2f65bcdf",
+        "type": "ui-gauge",
+        "z": "a43d1490faf7508d",
+        "name": "",
+        "group": "84c4c027120e6cbb",
+        "order": 6,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "Air Pressure",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": " hPa",
+        "segments": [
+            {
+                "from": "950",
+                "color": "#ca3838",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "980",
+                "color": "#00b500",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1030",
+                "color": "#ca3838",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 950,
+        "max": 1050,
+        "sizeThickness": "6",
+        "sizeGap": "6",
+        "sizeKeyThickness": "2",
+        "className": "",
+        "x": 930,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4606a7f399db9ef3",
+        "type": "ui-text",
+        "z": "a43d1490faf7508d",
+        "group": "84c4c027120e6cbb",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "label": "Wind Direction",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 940,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6624557abdf3c90e",
+        "type": "ui-chart",
+        "z": "a43d1490faf7508d",
+        "group": "119461fe2b45d904",
+        "name": "",
+        "label": "Temperature History",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "x",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "y",
+        "yAxisPropertyType": "property",
+        "ymin": -20,
+        "ymax": 50,
+        "bins": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointRadius": "",
+        "showLegend": true,
+        "removeOlder": "10",
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "60",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ffbb78",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 4,
+        "className": "",
+        "interpolation": "linear",
+        "x": 960,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2ba674f3342399d",
+        "type": "ui-chart",
+        "z": "a43d1490faf7508d",
+        "group": "119461fe2b45d904",
+        "name": "",
+        "label": "Noise Level History",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "x",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "y",
+        "yAxisPropertyType": "property",
+        "ymin": 0,
+        "ymax": 120,
+        "bins": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointRadius": "",
+        "showLegend": true,
+        "removeOlder": "10",
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "60",
+        "colors": [
+            "#d62728",
+            "#aec7e8",
+            "#ffbb78",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 4,
+        "className": "",
+        "interpolation": "linear",
+        "x": 950,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62d245bb0da05233",
+        "type": "ui-text",
+        "z": "a43d1490faf7508d",
+        "group": "45337fe3396a3646",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Active Alerts",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "HTML",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1770,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "34cd80e3384d758c",
+        "type": "mqtt in",
+        "z": "f99c1ba381cf8a0c",
+        "name": "",
+        "topic": "caleus/alerts/park",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f429801ba0f84b6b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "6620f9af78d60ea6"
+            ]
+        ]
+    },
+    {
+        "id": "1f9670e7377e64c0",
+        "type": "mqtt in",
+        "z": "f99c1ba381cf8a0c",
+        "name": "",
+        "topic": "caleus/alerts/school",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f429801ba0f84b6b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "b95a8e7d045f6584"
+            ]
+        ]
+    },
+    {
+        "id": "847385cab4141f34",
+        "type": "mqtt in",
+        "z": "f99c1ba381cf8a0c",
+        "name": "",
+        "topic": "caleus/alerts/police",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f429801ba0f84b6b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "3215770a8457bc44"
+            ]
+        ]
+    },
+    {
+        "id": "147cc2c037237cc4",
+        "type": "mqtt in",
+        "z": "f99c1ba381cf8a0c",
+        "name": "",
+        "topic": "caleus/alerts/severe",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f429801ba0f84b6b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 340,
+        "wires": [
+            [
+                "ab5a3755887061e5"
+            ]
+        ]
+    },
+    {
+        "id": "6620f9af78d60ea6",
+        "type": "function",
+        "z": "f99c1ba381cf8a0c",
+        "name": "json-to-message",
+        "func": "var log = flow.get('park_alert_log') || [];\nvar p = msg.payload;\nvar entry = new Date().toLocaleTimeString() + ' — ' +\n    p.alert_type.toUpperCase() + ' | ' + p.level + ' | ' + p.message;\nlog.unshift(entry);\nif (log.length > 10) log.pop();\nflow.set('park_alert_log', log);\nmsg.payload = log.join('<br>');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 100,
+        "wires": [
+            [
+                "fcee543c1580e59f"
+            ]
+        ]
+    },
+    {
+        "id": "b95a8e7d045f6584",
+        "type": "function",
+        "z": "f99c1ba381cf8a0c",
+        "name": "json-to-message",
+        "func": "var log = flow.get('school_alert_log') || [];\nvar p = msg.payload;\nvar entry = new Date().toLocaleTimeString() + ' — ' +\n    p.alert_type.toUpperCase() + ' | ' + p.level + ' | ' + p.message;\nlog.unshift(entry);\nif (log.length > 10) log.pop();\nflow.set('school_alert_log', log);\nmsg.payload = log.join('<br>');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "53c6acc3f61b6c1a"
+            ]
+        ]
+    },
+    {
+        "id": "3215770a8457bc44",
+        "type": "function",
+        "z": "f99c1ba381cf8a0c",
+        "name": "json-to-message",
+        "func": "var log = flow.get('police_alert_log') || [];\nvar p = msg.payload;\nvar entry = new Date().toLocaleTimeString() + ' — ' +\n    p.alert_type.toUpperCase() + ' | ' + p.level + ' | ' + p.message;\nlog.unshift(entry);\nif (log.length > 10) log.pop();\nflow.set('police_alert_log', log);\nmsg.payload = log.join('<br>');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "9103d44c755c5270"
+            ]
+        ]
+    },
+    {
+        "id": "ab5a3755887061e5",
+        "type": "function",
+        "z": "f99c1ba381cf8a0c",
+        "name": "json-to-message",
+        "func": "var log = flow.get('severe_alert_log') || [];\nvar p = msg.payload;\nvar entry = new Date().toLocaleTimeString() + ' — ' + \n            p.alert_type.toUpperCase() + ' | ' + p.level + ' | ' + p.message;\nlog.unshift(entry);\nif (log.length > 10) log.pop();\nflow.set('severe_alert_log', log);\nmsg.payload = log.join('<br>');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 340,
+        "wires": [
+            [
+                "e84ea93a4c4d7341"
+            ]
+        ]
+    },
+    {
+        "id": "fcee543c1580e59f",
+        "type": "ui-text",
+        "z": "f99c1ba381cf8a0c",
+        "group": "843d4b0ea98839c8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "park_alert",
+        "label": "Alerts",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 600,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "53c6acc3f61b6c1a",
+        "type": "ui-text",
+        "z": "f99c1ba381cf8a0c",
+        "group": "1b2462bec37b75bb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "school_alert",
+        "label": "Alerts",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 610,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9103d44c755c5270",
+        "type": "ui-text",
+        "z": "f99c1ba381cf8a0c",
+        "group": "2e5d1ab932d07fe6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "police_alert",
+        "label": "Alerts",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 610,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e84ea93a4c4d7341",
+        "type": "ui-text",
+        "z": "f99c1ba381cf8a0c",
+        "group": "9107fd8e34b5c57c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "severe_alert",
+        "label": "Alerts",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 610,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0caeecc339e8009e",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]
