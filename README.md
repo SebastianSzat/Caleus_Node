@@ -138,4 +138,6 @@ https://github.com/SebastianSzat/Caleus_Node/blob/main/Hardware/First_mockup_par
 
 Next will be the software environment on the laptop when I have the time for it, testing the sensors one by one, and building the first "brain".
 
+---
+
 *Concept: Auckland, June 2025. Build started: early 2026. Hungary. Database developer and administrator, 8 years. Named after Caelus, the Roman personification of the sky.*
