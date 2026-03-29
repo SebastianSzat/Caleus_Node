@@ -129,4 +129,13 @@ Production code and final hardware specs will stay private if this gets to a com
 
 ---
 
+## Story mode
+
+### All of the parts arrived this week (26-03-2026)
+
+https://github.com/SebastianSzat/Caleus_Node/blob/main/Hardware/First_mockup_parts_arrived.JPG
+![First mockup parts arrived](/Hardware/First_mockup_parts_arrived.JPG?raw=true "First mockup parts arrived")
+
+Next will be the software environment on the laptop when I have the time for it, testing the sensors one by one, and building the first "brain".
+
 *Concept: Auckland, June 2025. Build started: early 2026. Hungary. Database developer and administrator, 8 years. Named after Caelus, the Roman personification of the sky.*
