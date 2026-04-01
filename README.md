@@ -129,7 +129,7 @@ Production code and final hardware specs will stay private if this gets to a com
 
 ---
 
-## Story mode
+# Story mode
 
 ### All of the parts arrived this week (26-03-2026)
 
@@ -137,6 +137,136 @@ https://github.com/SebastianSzat/Caleus_Node/blob/main/Hardware/First_mockup_par
 ![First mockup parts arrived](/Hardware/First_mockup_parts_arrived.JPG?raw=true "First mockup parts arrived")
 
 Next will be the software environment on the laptop when I have the time for it, testing the sensors one by one, and building the first "brain".
+
+---
+## Getting the ESP32 Working (30-03-2026)
+## Arduino IDE setup and first upload
+
+---
+
+## Installing the tools
+
+Download Arduino IDE 2.x from arduino.cc. The install is straightforward, next-next-finish.
+
+ESP32 is not in Arduino by default so you add it manually. Open **File → Preferences**, paste this URL into the Additional Boards Manager URLs field:
+
+```
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+```
+
+Then **Tools → Board → Boards Manager**, search `esp32`, install **esp32 by Espressif Systems**. It downloads around 300MB and takes a few minutes.
+
+Once done, go to **Tools → Board → esp32** and select **ESP32 Dev Module**.
+
+---
+
+## I am lucky I only thrown out 95% of my old cables
+
+Plugged the board in. Red light on the ESP32, it's getting power. Opened Arduino IDE, went to Tools → Port. Greyed out. Nothing.
+
+Opened Device Manager. No Ports category at all. Tried to find in other categories, and still nothing. 
+
+The board uses a CP2102N USB-to-serial chip (I had to use a bright fleshlight and a correct angle to be able to read it... I may need to buy a magnifier), so I downloaded the Silicon Labs driver and installed it. Still nothing. I installed a second driver variant... still nothing... Ran the universal driver installer and manually added registry entries... still nothing.
+
+Tried 3 different micro-USB cables... still nothing.
+
+The fourth cable worked, and I have an extra fifth piece that I did not try, and will not try until I lose the lucky number four. I thought I have only one of these lieing around, as only my old BT headphones are using them... I feel lucky to be wrong. It's not expensive, but a hussle to get one just to start.
+
+Most micro-USB cables floating around in drawers are charge-only, they carry power but the data wires inside are either missing or just not connected. Device Manager now showed a new category and Arduino showed the **tools → ports** with **COM3**.
+
+---
+
+## The upload problem
+
+Selected COM3 in Arduino, opened the Blink example from **File → Examples → 01.Basics → Blink**, clicked Upload.
+
+```
+error: 'LED_BUILTIN' was not declared in this scope
+```
+
+The ESP32 board package doesn't define LED_BUILTIN automatically. Replaced it with a direct pin number, GPIO2 is the standard onboard LED pin on DevKitC boards (according to the internet):
+
+```cpp
+#define LED_PIN 2
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_PIN, LOW);
+  delay(1000);
+}
+```
+
+Clicked Upload again.
+
+```
+A fatal error occurred: Failed to connect to ESP32: Wrong boot mode detected (0x13)!
+The chip needs to be in download mode.
+```
+
+The ESP32-DevKitC-32E needs to be manually put into download mode for uploading. The fix: click Upload, watch the output panel, and when `Connecting......` appears hold the **BOOT** button on the board until the progress bar starts moving. Release it once writing begins.
+
+This worked. Upload completed successfully.
+
+---
+
+## The LED, not that kind of LED
+
+Sketch uploaded. Board running. LED not blinking.
+
+Tried inverting the logic in case the board used active-low:
+
+```cpp
+digitalWrite(LED_PIN, LOW);  // maybe this turns it ON?
+```
+
+Still nothing. I tried different pins, tried to really see a LED pin in the layout, but failed.
+
+Added Serial output to confirm the code was actually running:
+
+```cpp
+void loop() {
+  digitalWrite(LED_PIN, LOW);
+  Serial.println("LED should be ON");
+  delay(1000);
+  digitalWrite(LED_PIN, HIGH);
+  Serial.println("LED should be OFF");
+  delay(1000);
+}
+```
+
+Opened the Serial Monitor at 115200 baud. Messages printing perfectly. The code was running fine. The LED just wasn't responding.
+
+Checked the official Espressif DevKitC-32E schematic again (this time not only the layout, but the descriptions), the genuine board has a power LED wired directly to 5V, not a user-controllable LED on any GPIO. Clone boards often add a GPIO2 LED but the real Espressif reference design doesn't have one. The board is from Botland and appears to be the genuine version.
+
+---
+
+## Summary, or What was done (less than half of what I planned, but oh well... next time)
+
+Serial Monitor printing confirms:
+- The board is recognised by Windows
+- Arduino IDE can compile for ESP32
+- The upload chain works (including the BOOT button workaround)
+- The ESP32 is running code and communicating back over serial
+
+That's everything needed to move on to sensor testing. The LED was never the point.
+
+---
+
+## Things that slowed my progress, and worth taking note on
+
+- Most micro-USB cables in existence are charge-only. Test with a known data cable before debugging anything else.
+- `LED_BUILTIN` is not defined for ESP32. Use the pin number directly.
+- The DevKitC-32E needs the BOOT button held during upload. Click Upload, wait for `Connecting......`, hold BOOT, release when writing starts.
+- The genuine Espressif DevKitC-32E has no user-controllable onboard LED. Serial Monitor is your indicator.
+
+---
+
+Next is testing the sensors one-by-one.
 
 ---
 
