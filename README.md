@@ -266,7 +266,37 @@ That's everything needed to move on to sensor testing. The LED was never the poi
 
 ---
 
-Next is testing the sensors one-by-one.
+## Getting the ESP32 UN-Working (20-04-2026)
+
+We had an election in the country that was really heated, my workplace was swamped with tasks, and I was not in the mood to work on this project for a few weeks.
+I returned to it on the 20th of April, but I screwed it up.
+
+I somehow pulled the microUSB connector off the ESP32...
+
+Then in a panic mode, I tried to resolder it, and when I connected it to the computer again, it was not working at all...
+I checked again, and it seems like I messed up the soldering, and probably fried some of the microchips. I don't know, I do not have the tools to go so deep into the problem.
+I tried to create pictures to share, but phone cameras just can't focus well enough to the board, and from far away nothing is visible, from up-close it's just blurry.
+
+I tried and failed.
+
+Next is ordering a new ESP32. 
+...
+I've ordered, and after a few days I got back a reply, that they are out of stock, so I had to reorder from elsewhere.
+...
+Meanwhile something happened at Anthropic, and they are trying to charge me hundreds of euros for stuff I did not approve. I froze, and later trashed my card, ordered a new one, but Anthropic kept trying to charge 228.60 EUR, 114.30 EUR, and even charging my subscription fee way too early (after 6 days in the monthly plan). Zero support, chat bot generic replies. In the end I had to cancel my subscription.
+It is a small setback, because I used claude code to clean my scripts, and create the manuals, and commenting for them (with human overview obviously, but it saved a lot of time), and I used it to help with finding the problems.
+
+If I get the new PCB, I will try without Claude code helping, and continue.
+
+## Summary - One step forward, two steps back.
+
+- Do not rush! Pulling the micro-USB out slowly and carefully saves you a lot of headaches. Alternatively buy an esp with usb-C port, it is less likely to get stuck.
+- DO NOT RUSH! Using panic and adrenaline to quickly try to solder back something as small as a micro-USB connector is a really bad idea. Especially if you try to power it up without carefully checking the soldering job.
+- While AI tools are making a lot of tedious tasks easier, and quicker, over reliance can lead to delays if something goes awry.
+
+---
+
+Next is sadly still testing the sensors one-by-one. (without Claude code)
 
 ---
 
